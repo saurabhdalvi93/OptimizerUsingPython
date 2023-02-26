@@ -1,0 +1,6 @@
+pip install pandas
+pip install xlsxwriter
+pip install xlrd
+pip install openpyxl
+pip install numpy
+

@@ -1,0 +1,7 @@
+#if df['BP'] == i:
+                #Type_new = Total
+                #df.insert('CBQ', Type_new)
+                #print(df)
+            #CBQ = Total.max()           
+    #print("The Value of CBQ :", CBQ)
+#Type_new = pd.Series([])

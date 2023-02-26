@@ -1,0 +1,47 @@
+import pandas as pd
+import numpy as np
+
+df = pd.read_excel (r'C:\Users\Saurabh.DESKTOP-DTU5AD3\Desktop\Optimizer Project\Python files\sum.xlsx') 
+df.columns = ['BP','BQ','SP','SQ']
+print(df)
+
+a = []
+a.extend(df['BP'].tolist())
+
+b = []
+b.extend(df['SP'].tolist())
+
+price_list = sorted(np.unique(a+b))
+print(price_list)
+
+for price in price_list:
+    print('Price =', price)
+    c = []
+    d = []
+    
+  # to find the value of CBQ
+    #print('Values Of CBQ -->')  
+    for i in list(df.BP):
+        if (i >= price):
+            Total = df.loc[df['BP'] >= i, 'BQ'].sum()
+            c.append(Total)
+    e = max(c)
+    print('CBQ = ',e)
+           #print('BP:',i,':: CBQ:',Total)
+    
+  # to find the value of CSQ
+    #print('Values Of CSQ -->')
+    for j in list(df.SP):
+        if (j <= price):
+            Total1 = df.loc[df['SP'] <= j, 'SQ'].sum()
+            d.append(Total1)
+    f = max(d)
+    print('CSQ = ',f)
+            #print('SP:',j,':: CSQ:',Total1)
+
+        
+ 
+            
+            
+
+       

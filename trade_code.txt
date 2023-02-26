@@ -1,0 +1,25 @@
+#-------------------------------------------* Program For Trade *--------------------------------------#
+
+
+e = [x for x in a if x >= 5500]
+f = [x for x in b if x <= 5500]
+
+e.sort(reverse=True)
+f.sort()
+
+print(e)
+print(f)
+
+g = []
+h = []
+
+for k in e:
+    Total2 = df.loc[df['BP'] >= k, 'BQ'].sum()
+    g.append(Total2)
+    print(g)
+
+for l in f:
+    Total3 = df.loc[df['SP'] <= l, 'SQ'].sum()
+    h.append(Total3)
+    print(h)    
+    
